@@ -30,7 +30,7 @@ import seaborn as sns
 from scipy.stats import ttest_ind
 from statsmodels.stats.multitest import multipletests
 from scipy.stats import mannwhitneyu
-from statsmodels.stats.multitest import multipletests
+from scipy.cluster.hierarchy import linkage, dendrogram
 ```
 
 ## Load, Inspect, and Prepare Data

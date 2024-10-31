@@ -31,6 +31,7 @@ from scipy.stats import ttest_ind
 from statsmodels.stats.multitest import multipletests
 from scipy.stats import mannwhitneyu
 from statsmodels.stats.multitest import multipletests
+from scipy.cluster.hierarchy import dendrogram, linkage
 ```
 
 ## Load, Inspect, and Prepare Data

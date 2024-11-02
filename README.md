@@ -239,10 +239,10 @@ Pairwise analyses are useful when working with small sample sizes, as we current
 results = []
 
 for gene in data_frame.index:
-    # extract control group data for the current gene
-    control = data_frame.loc[gene, ['JJ_AMIL_141050_INTER-Str_counts', 'JJ_AMIL_141056_INTER-Str_counts', 'JJ_AMIL_141062_INTER-Str_counts']]
     # extract treated group data for the current gene
-    treated = data_frame.loc[gene, ['JJ_CTRL_141048_INTER-Str_counts', 'JJ_CTRL_141054_INTER-Str_counts', 'JJ_CTRL_141060_INTER-Str_counts']]
+    treated = data_frame.loc[gene, ['JJ_AMIL_141050_INTER-Str_counts', 'JJ_AMIL_141056_INTER-Str_counts', 'JJ_AMIL_141062_INTER-Str_counts']]
+    # extract control group data for the current gene
+    control = data_frame.loc[gene, ['JJ_CTRL_141048_INTER-Str_counts', 'JJ_CTRL_141054_INTER-Str_counts', 'JJ_CTRL_141060_INTER-Str_counts']]
 
     # calculate mean expression levels for control and treated groups
     mean_control = np.mean(control)

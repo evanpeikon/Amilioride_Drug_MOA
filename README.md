@@ -319,7 +319,7 @@ Now, in the code block below, I'll show you how to produce a volcano plot contai
 ```python
 plt.figure(figsize=(8, 6))
 sns.scatterplot(data=deg, x='log2fc', y='p_adj', hue='log2fc', palette='viridis', alpha=0.9, edgecolor=None)
-plt.axhline(y=0.01, color='red', linestyle='-', linewidth=1) 
+plt.axhline(y=0.05, color='red', linestyle='-', linewidth=1) 
 plt.axvline(x=1, color='blue', linestyle='-', linewidth=1)  
 plt.axvline(x=-1, color='blue', linestyle='-', linewidth=1) 
 plt.xlabel('log2 Fold Change')

@@ -306,7 +306,7 @@ plt.axvline(x=1, color='blue', linestyle='-', linewidth=1)
 plt.axvline(x=-1, color='blue', linestyle='-', linewidth=1)
 plt.xlabel('log2 Fold Change')
 plt.ylabel('Adjusted P-value')
-plt.legend(title='log2 Fold Change', loc='lower left')
+plt.legend(title='log2 Fold Change', loc='upper left')
 plt.show()
 ```
 Which, produces the following output:

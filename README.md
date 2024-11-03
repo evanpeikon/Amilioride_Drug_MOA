@@ -324,14 +324,14 @@ plt.axvline(x=1, color='blue', linestyle='-', linewidth=1)
 plt.axvline(x=-1, color='blue', linestyle='-', linewidth=1) 
 plt.xlabel('log2 Fold Change')
 plt.ylabel('Adjusted P-value')
-plt.legend(title='log2 Fold Change', loc='lower left')
+plt.legend(title='log2 Fold Change', loc='upper left')
 plt.show()
 ```
 Which, produces the following output:
 
 <img src="images/DEA_6.png" alt="Description" width="600" height="400">
 
-Notably, the data in this second volcano plot is much more sparse, as it only contains genes that met our filtering criteria of an adjusted p-value <0.1 and a log2 fold change >1. However, this plot does little to show us how these genes are related to one another, which will help us unravel amiloride's physiological effects. To better understand that, we can perform hierarchical clustering, which can help us understand how genes with differential expression are related and identify clusters of genes that may be similarly affected by the drug treatment.
+Notably, the data in this second volcano plot is much more sparse, as it only contains genes that met our filtering criteria of an adjusted p-value <0.05 and a log2 fold change >1. However, this plot does little to show us how these genes are related to one another, which will help us unravel amiloride's physiological effects. To better understand that, we can perform hierarchical clustering, which can help us understand how genes with differential expression are related and identify clusters of genes that may be similarly affected by the drug treatment.
 
 The first hierarchical clustering visualization we'll explore is a heatmap, which provides an integrated view of the data, showing not only how samples or features group together but also the magnitude of their values. In this code block below, I'll show you how to create this type of visualization:
 

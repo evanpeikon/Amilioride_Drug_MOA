@@ -31,6 +31,7 @@ from scipy.stats import ttest_ind
 from statsmodels.stats.multitest import multipletests
 from scipy.stats import mannwhitneyu
 from scipy.cluster.hierarchy import linkage, dendrogram
+from sklearn.preprocessing import StandardScaler
 ```
 
 ## Load, Inspect, and Prepare Data

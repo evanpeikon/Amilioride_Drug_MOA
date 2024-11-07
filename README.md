@@ -30,8 +30,9 @@ import seaborn as sns
 from scipy.stats import ttest_ind
 from statsmodels.stats.multitest import multipletests
 from scipy.stats import mannwhitneyu
+from scipy.cluster.hierarchy import linkage, dendrogram
+from sklearn.preprocessing import StandardScaler
 from statsmodels.stats.multitest import multipletests
-from scipy.cluster.hierarchy import dendrogram, linkage
 ```
 
 ## Load, Inspect, and Prepare Data
@@ -139,7 +140,7 @@ Which produces the following output:
 
 The image above shows the results of hierarchical clustering, which can be visualized via a dendrogram. When viewing a dendrogram, special attention should be paid to the cluster groupings and branches. Samples clustered together are more similar to each other, and the length of the branches (vertical lines) connecting clusters represents the distance or dissimilarity between clusters. 
 
-The chart above shows that our three control samples are clustered on the left, whereas our three experimental (i.e.,m amiloride-exposed) samples are clustered together on the right. This is a good sign, suggesting that the control and experimental groups are distinct and that there is biological variation between the two groups of samples. Thus, we can feel confident that our downstream differential expression analyses will provide meaningful results. 
+The chart above shows that our three control samples are clustered on the right, whereas our three experimental (i.e.,m amiloride-exposed) samples are clustered together on the left. This is a good sign, suggesting that the control and experimental groups are distinct and that there is biological variation between the two groups of samples. Thus, we can feel confident that our downstream differential expression analyses will provide meaningful results. 
 
 ## Quality Control, Filtering, and Normalization
 
@@ -240,10 +241,10 @@ Pairwise analyses are useful when working with small sample sizes, as we current
 results = []
 
 for gene in data_frame.index:
-    # extract control group data for the current gene
-    control = data_frame.loc[gene, ['JJ_AMIL_141050_INTER-Str_counts', 'JJ_AMIL_141056_INTER-Str_counts', 'JJ_AMIL_141062_INTER-Str_counts']]
     # extract treated group data for the current gene
-    treated = data_frame.loc[gene, ['JJ_CTRL_141048_INTER-Str_counts', 'JJ_CTRL_141054_INTER-Str_counts', 'JJ_CTRL_141060_INTER-Str_counts']]
+    treated = data_frame.loc[gene, ['JJ_AMIL_141050_INTER-Str_counts', 'JJ_AMIL_141056_INTER-Str_counts', 'JJ_AMIL_141062_INTER-Str_counts']]
+    # extract control group data for the current gene
+    control = data_frame.loc[gene, ['JJ_CTRL_141048_INTER-Str_counts', 'JJ_CTRL_141054_INTER-Str_counts', 'JJ_CTRL_141060_INTER-Str_counts']]
 
     # calculate mean expression levels for control and treated groups
     mean_control = np.mean(control)
@@ -307,7 +308,7 @@ plt.axvline(x=1, color='blue', linestyle='-', linewidth=1)
 plt.axvline(x=-1, color='blue', linestyle='-', linewidth=1)
 plt.xlabel('log2 Fold Change')
 plt.ylabel('Adjusted P-value')
-plt.legend(title='log2 Fold Change', loc='lower left')
+plt.legend(title='log2 Fold Change', loc='upper left')
 plt.show()
 ```
 Which, produces the following output:
@@ -320,19 +321,19 @@ Now, in the code block below, I'll show you how to produce a volcano plot contai
 ```python
 plt.figure(figsize=(8, 6))
 sns.scatterplot(data=deg, x='log2fc', y='p_adj', hue='log2fc', palette='viridis', alpha=0.9, edgecolor=None)
-plt.axhline(y=0.01, color='red', linestyle='-', linewidth=1) 
+plt.axhline(y=0.05, color='red', linestyle='-', linewidth=1) 
 plt.axvline(x=1, color='blue', linestyle='-', linewidth=1)  
 plt.axvline(x=-1, color='blue', linestyle='-', linewidth=1) 
 plt.xlabel('log2 Fold Change')
 plt.ylabel('Adjusted P-value')
-plt.legend(title='log2 Fold Change', loc='lower left')
+plt.legend(title='log2 Fold Change', loc='upper left')
 plt.show()
 ```
 Which, produces the following output:
 
 <img src="images/DEA_6.png" alt="Description" width="600" height="400">
 
-Notably, the data in this second volcano plot is much more sparse, as it only contains genes that met our filtering criteria of an adjusted p-value <0.1 and a log2 fold change >1. However, this plot does little to show us how these genes are related to one another, which will help us unravel amiloride's physiological effects. To better understand that, we can perform hierarchical clustering, which can help us understand how genes with differential expression are related and identify clusters of genes that may be similarly affected by the drug treatment.
+Notably, the data in this second volcano plot is much more sparse, as it only contains genes that met our filtering criteria of an adjusted p-value <0.05 and a log2 fold change >1. However, this plot does little to show us how these genes are related to one another, which will help us unravel amiloride's physiological effects. To better understand that, we can perform hierarchical clustering, which can help us understand how genes with differential expression are related and identify clusters of genes that may be similarly affected by the drug treatment.
 
 The first hierarchical clustering visualization we'll explore is a heatmap, which provides an integrated view of the data, showing not only how samples or features group together but also the magnitude of their values. In this code block below, I'll show you how to create this type of visualization:
 

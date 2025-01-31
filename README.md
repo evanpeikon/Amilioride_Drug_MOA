@@ -778,6 +778,7 @@ enrichment_Amilioride_BP = gp.enrichr(gene_list_Amilioride, gene_sets=['GO_Biolo
 enrichment_Amilioride_BP = enrichment_Amilioride_BP.results
 enrichment_Amilioride_BP.head()
 ```
+
 <img width="1328" alt="Screenshot 2025-01-31 at 8 54 02 AM" src="https://github.com/user-attachments/assets/7e0ab2f1-df95-482c-9509-dab1e59000eb" />
 
 This same analysis was then repeated for molecular functions (MF) and cellular components (CC),as demonstrated below:
@@ -790,7 +791,9 @@ enrichment_Amilioride_MF = gp.enrichr(gene_list_Amilioride, gene_sets=['GO_Molec
 enrichment_Amilioride_MF = enrichment_Amilioride_MF.results
 enrichment_Amilioride_MF.head()
 ```
+
 <img width="1292" alt="Screenshot 2025-01-31 at 8 54 45 AM" src="https://github.com/user-attachments/assets/4995f73b-9929-4490-b4f6-6dd622af2b9a" />
+
 ```python
 # Repeat the same for Cellular Component (CC)
 enrichment_Amilioride_CC = gp.enrichr(gene_list_Amilioride, gene_sets=['GO_Cellular_Component_2018'], organism='human')
@@ -799,6 +802,7 @@ enrichment_Amilioride_CC = gp.enrichr(gene_list_Amilioride, gene_sets=['GO_Cellu
 enrichment_Amilioride_CC = enrichment_Amilioride_CC.results
 enrichment_Amilioride_CC.head()
 ```
+
 <img width="1361" alt="Screenshot 2025-01-31 at 8 55 06 AM" src="https://github.com/user-attachments/assets/2843dc6b-d532-4012-a910-06479e825562" />
 
 The gene ontology (GO) enrichment analysis highlights significant shifts in metabolic, immune, and mitochondrial processes in response to treatment. The top biological process (BP) terms primarily revolve around glycolysis and glucose metabolism, including canonical glycolysis, glucose catabolic process to pyruvate, and gluconeogenesis. This suggests that energy metabolism is a central feature of the observed molecular changes, potentially reflecting alterations in cellular bioenergetics or metabolic reprogramming in response to treatment. Given that cancer cells often rely on glycolysis for rapid ATP production (the Warburg effect), disruptions to these pathways could indicate metabolic stress or a shift toward alternative energy production strategies.
@@ -819,6 +823,7 @@ enrichment_Amilioride = gp.enrichr(gene_list_Amilioride, gene_sets=['KEGG_2016']
 enrichment_Amilioride = enrichment_Amilioride.results
 enrichment_Amilioride.head(5)
 ```
+
 <img width="1267" alt="Screenshot 2025-01-31 at 8 55 58 AM" src="https://github.com/user-attachments/assets/73a59cb8-4235-4778-b87c-83dcd679f4c6" />
 
 The pathway analysis reveals a strong emphasis on metabolic and immune-related processes, suggesting that treatment influences both cellular energy dynamics and immune system interactions. The enrichment of biosynthesis of amino acids and carbon metabolism indicates shifts in fundamental metabolic pathways, which are essential for sustaining cell growth and function. Coupled with the prominence of glycolysis/gluconeogenesis, these findings suggest that the treatment may be disrupting key energy production and biosynthetic pathways, potentially limiting the proliferative capacity of cancer cells or forcing a metabolic adaptation. Given that rapidly dividing cells, including cancer cells, rely heavily on efficient carbon and amino acid metabolism, perturbations in these pathways could contribute to the therapeutic effect of the treatment.

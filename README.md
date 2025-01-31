@@ -839,7 +839,7 @@ Additionally, the enrichment of Staphylococcus aureus infection and asthma pathw
 
 Amiloride, traditionally known as a diuretic, has emerged as a promising therapeutic agent for multiple myeloma, as evidenced by recent studies. The paper "Amiloride, An Old Diuretic Drug, Is a Potential Therapeutic Agent for Multiple Myeloma" highlights that amiloride effectively decreases cell growth and induces significant apoptosis in myeloma cells within 24 to 48 hours of treatment, as demonstrated in the image below. Additionally, these findings are supported by my analyses, which I will summarize the preceding sub-sections.
 
-<img src="images/study_fig2a.png" alt="Description" width="600" height="300">
+<img width="559" alt="Screenshot 2025-01-31 at 9 31 38 AM" src="https://github.com/user-attachments/assets/54acd91d-0671-485c-a45b-5a6af43cea5a" />
 
 ## Results
 ### Gene Co-Expression Network Analysis**

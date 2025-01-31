@@ -201,6 +201,8 @@ The image above shows the results of hierarchical clustering, which can be visua
 
 The chart above shows that our three control samples are clustered on the right, whereas our three experimental (i.e.,m amiloride-exposed) samples are clustered together on the left. This is a good sign, suggesting that the control and experimental groups are distinct and that there is biological variation between the two groups of samples. Thus, we can feel confident that our downstream differential expression analyses will provide meaningful results.
 
+> Note: You can download the countlist.csv file [here](https://github.com/evanpeikon/Amilioride_Drug_MOA/tree/main/data)
+
 ## **Quality Control, Filtering, and Normalization**
 
 The next step in our analysis is to filter out genes with low expression levels across all samples, which can introduce noise in the data. By filtering these out, you can make your results more reliable and improve your statistical power, making detecting real biological differences between conditions easier. Additionally, filtering out genes with low expression counts decreases computational load by reducing the number of genes in your dataset, making future downstream analyses faster.
@@ -302,6 +304,8 @@ plt.show()
 Which produces the following output:
 
 <img width="1006" alt="Screenshot 2025-01-31 at 8 38 15 AM" src="https://github.com/user-attachments/assets/d659adb1-4773-4b6f-9ab8-956d53f263ca" />
+
+> Note: You can download the filtered_normalized_countlist.csv file [here](https://github.com/evanpeikon/Amilioride_Drug_MOA/tree/main/data)
 
 # 🧬 Analyses
 
@@ -589,6 +593,8 @@ plt.show()
 As you can see in the image above, our volcano plot combines two critical pieces of information for each gene: the magnitude of change (fold change) and the statistical significance (p-value) of that change. Specifically, the x-axis on this graph shows the log2 fold change between the control and experimental samples in our pairwise analysis. A positive value indicates an upregulation of a gene in the experimental group compared to the control, and a negative value represents downregulation of a gene in the experimental group compared to the control. Additionally, the y-axis shows the significance of said change in gene expression.
 
 Thus, when viewing this graph, we are most interested in the two boxes formed in the lower left and lower right corners, which represent down-regulated and up-regulated genes with high statistical significance. This type of chart also allows us to see how changing our criteria for defining differentially expressed genes can impact the total number of genes in our dataset.
+
+> Note: You can download the deg_Amilioride.csv file [here](https://github.com/evanpeikon/Amilioride_Drug_MOA/tree/main/data)
 
 ## PPI Network Analysis
 

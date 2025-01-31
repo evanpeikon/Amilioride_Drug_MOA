@@ -195,7 +195,7 @@ plt.ylabel('Distance')
 plt.show()
 ```
 
-<img width="527" alt="Screenshot 2025-01-31 at 8 13 31 AM" src="https://github.com/user-attachments/assets/7e89400d-f823-4e47-a216-a00c2c001a48" />
+<img width="400" alt="Screenshot 2025-01-31 at 8 13 31 AM" src="https://github.com/user-attachments/assets/7e89400d-f823-4e47-a216-a00c2c001a48" />
 
 The image above shows the results of hierarchical clustering, which can be visualized via a dendrogram. When viewing a dendrogram, special attention should be paid to the cluster groupings and branches. Samples clustered together are more similar to each other, and the length of the branches (vertical lines) connecting clusters represents the distance or dissimilarity between clusters.
 
@@ -242,7 +242,7 @@ plot_genes_retained_by_cpm(countlist_no_name)
 ```
 Whoch produces the following output:
 
-<img width="662" alt="Screenshot 2025-01-31 at 8 37 25 AM" src="https://github.com/user-attachments/assets/bda88410-3d6b-4a6f-80f9-ef5ee318aeba" />
+<img width="600" alt="Screenshot 2025-01-31 at 8 37 25 AM" src="https://github.com/user-attachments/assets/bda88410-3d6b-4a6f-80f9-ef5ee318aeba" />
 
 Based on the data in the chart above, we'll filter genes with an expression threshold of <0.75 CPM. For many bulk RNA-seq datasets, a CPM threshold of 1 is a common filtering point, but 0.75 is slightly more lenient is justifiable given the distribution of our data. Now, In the code block below, I'll show you how perform basic filtering and normalization.
 
@@ -388,7 +388,7 @@ print(sorted_control_genes[:10])
 ```
 Which produces the following outputs:
 
-<img width="948" alt="Screenshot 2025-01-31 at 8 40 32 AM" src="https://github.com/user-attachments/assets/acc12922-a5d9-4ce8-b2de-946cd80fc68f" />
+<img width="900" alt="Screenshot 2025-01-31 at 8 40 32 AM" src="https://github.com/user-attachments/assets/acc12922-a5d9-4ce8-b2de-946cd80fc68f" />
 
 - ```Top 10 hub genes in Treatment network: [('NFYA', 38), ('STPG1', 38), ('LAS1L', 38), ('ENPP4', 38), ('BAD', 38), ('MAD1L1', 38), ('DBNDD1', 38), ('RBM5', 38), ('ARF5', 38), ('SARM1', 38)]```
 - ```Top 10 hub genes in Control network: [('FIRRM', 43), ('FUCA2', 43), ('GCLC', 43), ('NFYA', 43), ('STPG1', 43), ('LAS1L', 43), ('SEMA3F', 43), ('ANKIB1', 43), ('KRIT1', 43), ('LASP1', 43)]```
@@ -830,11 +830,11 @@ The pathway analysis reveals a strong emphasis on metabolic and immune-related p
 
 Additionally, the enrichment of Staphylococcus aureus infection and asthma pathways suggests an interaction with immune signaling. While these pathways are typically associated with infectious and inflammatory responses, their presence in this analysis may indicate a broader modulation of immune activity. The involvement of MHC class II receptor activity from GO analysis supports this notion, as it suggests antigen presentation and immune cell activation. This could imply that the treatment not only affects tumor metabolism but also alters immune surveillance or inflammation-related pathways, potentially enhancing anti-tumor immunity. Together, these results highlight a dual effect of the treatment, simultaneously disrupting metabolic homeostasis and modulating immune-related processes.
 
-#🧬 Results & Conclusion
+# 🧬 Results & Conclusion
 
 Amiloride, traditionally known as a diuretic, has emerged as a promising therapeutic agent for multiple myeloma, as evidenced by recent studies. The paper "Amiloride, An Old Diuretic Drug, Is a Potential Therapeutic Agent for Multiple Myeloma" highlights that amiloride effectively decreases cell growth and induces significant apoptosis in myeloma cells within 24 to 48 hours of treatment, as demonstrated in the image below. Additionally, these findings are supported by my analyses, which I will summarize the preceding sub-sections.
 
-<img src="images/study_fig2a.png" alt="Description" width="700" height="300">
+<img src="images/study_fig2a.png" alt="Description" width="600" height="300">
 
 ## Results
 ### Gene Co-Expression Network Analysis**
